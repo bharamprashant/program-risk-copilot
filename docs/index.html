@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Program Risk Copilot</title><style>
+:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#5d5b55;--line:#e3e0d8;--accent:#0b6e4f;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#151513;--fg:#ecebe6;--muted:#a6a39b;--line:#33322e;--accent:#4cc79b;--card:#1d1d1a}}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif;margin:0;padding:0 16px}
+main{max-width:960px;margin:40px auto} h1{font-size:1.9rem;margin-bottom:.2rem} h2{margin-top:2.2rem;border-top:1px solid var(--line);padding-top:1.2rem}
+.sub{color:var(--muted);margin-top:0} .note{color:var(--muted);font-size:.92rem} .scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--card);font-size:.93rem} th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+th{color:var(--muted);font-weight:600} pre{background:var(--card);border:1px solid var(--line);padding:12px;overflow-x:auto;white-space:pre-wrap;font-size:.85rem}
+a{color:var(--accent)}</style></head><body><main>
+<h1>Program Risk &amp; Compliance Copilot</h1>
+<p class="sub">ML slip-risk prediction + RAG over DORA, GDPR and PSD2 + an LLM agent that drafts steering-committee briefings, under guardrails and human approval. Every number below is measured.</p>
+<h2>1 · Regulation search (RAG)</h2><p>Hybrid search (BM25 keywords + LSA embeddings, fused with RRF) over 423 article-level chunks of DORA, GDPR and PSD2. Settings were tuned on the dev split; the test split was never used for tuning.</p><div class='scroll'><table><thead><tr><th>Split</th><th>Right article first</th><th>Right article in top 5</th><th>MRR</th><th>Off-topic refused</th><th>Real questions wrongly refused</th></tr></thead><tbody><tr><td>dev</td><td>56%</td><td>84%</td><td>0.678</td><td>100%</td><td>0%</td></tr><tr><td>test</td><td>44%</td><td>68%</td><td>0.541</td><td>100%</td><td>4%</td></tr></tbody></table></div><p class='note'>The dev→test drop (84% → 68%) is the cost of tuning; the test number is the honest one.</p><h2>3 · Slip-risk model (ML)</h2><p>Trained on Apache Jira issues. Label: a concrete release was removed from the issue (placeholders and bulk renames excluded). Time-based split; issues younger than 180 days dropped to avoid survivorship bias.</p><div class='scroll'><table><thead><tr><th>Model</th><th>ROC-AUC</th><th>PR-AUC</th><th>Precision @ top 20%</th><th>Recall @ top 20%</th><th>Lift</th></tr></thead><tbody><tr><td>baseline_random</td><td>0.5</td><td>0.122</td><td>12%</td><td>20%</td><td>1.0×</td></tr><tr><td>logistic_regression ✅ chosen</td><td>0.605</td><td>0.212</td><td>20%</td><td>32%</td><td>1.61×</td></tr><tr><td>gradient_boosting</td><td>0.536</td><td>0.168</td><td>16%</td><td>26%</td><td>1.29×</td></tr><tr><td>logistic_no_text</td><td>0.593</td><td>0.155</td><td>16%</td><td>26%</td><td>1.32×</td></tr></tbody></table></div><p class='note'>Train 4580 / test 1146 issues. A modest but real signal: reviewing the riskiest fifth of work catches about a third of slips. Explainable logistic regression beat gradient boosting, so it ships.</p><h2>4 · Sample output: steering-committee briefing</h2><pre># Steering-committee briefing: Nordic payments platform: DORA readiness
+
+**Overall: 🔴 RED**: 6 of 6 regulatory workstreams need attention.
+
+## Top delivery risks
+| Issue | What | Why | Action |
+|---|---|---|---|
+| PAY-120 | Concentration risk assessment of cloud providers | Model reasons: mentions &quot;region&quot;; mentions &quot;dependency&quot;; assignee already has many open issues | Confirm owner, dependencies and date at next stand-up. |
+| PAY-114 | Strong customer authentication for in-app card payments | Model reasons: mentions &quot;upgrade&quot;; mentions &quot;value&quot;; assignee already has many open issues | Confirm owner, dependencies and date at next stand-up. |
+| PAY-109 | ICT business continuity plan for card authorisation service | Model reasons: mentions &quot;region&quot;; assignee already has many open issues; no owner assigned | Confirm owner, dependencies and date at next stand-up. |
+| PAY-115 | SCA challenge loops on iOS 19 for some banks | Model reasons: type is Bug; mentions &quot;users&quot;; assignee already has many open issues | Confirm owner, dependencies and date at next stand-up. |
+| PAY-108 | Nightly ledger backup fails intermittently on replica lag | Model reasons: type is Bug; mentions &quot;fails&quot;; mentions &quot;storage&quot; | Confirm owner, dependencies and date at next stand-up. |
+
+## Regulatory checks
+| Topic | Status | Basis | Note |
+|---|---|---|---|
+| ICT third-party register and contracts | 🟠 AT_RISK | [DORA Art. 28](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554#art_28); [DORA Art. 29](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554#art_29) | 3 related issues; high-risk or critical: PAY-101, PAY-120 |
+| Major ICT incident classification and reporting | 🟠 AT_RISK | [DORA Art. 18](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554#art_18); [DORA Art. 19](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554#art_19) | 3 related issues; high-risk or critical: PAY-104 |
+| Digital operational resilience testing | 🔴 GAP | [DORA Art. 24](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554#art_24); [DORA Art. 25](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554#art_25) | 3 related issues; high-risk or critical: PAY-106 |
+| Backup and recovery | 🟠 AT_RISK | [DORA Art. 12](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554#art_12); [DORA Art. 61](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554#art_61) | 3 related issues; high-risk or critical: PAY-108, PAY-109 |
+| Automated decisions and DPIA | 🟠 AT_RISK | [GDPR Art. 35](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679#art_35); [GDPR Art. 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679#art_22) | 3 related issues; high-risk or critical: PAY-111, PAY-112 |
+| Strong customer authentication | 🟠 AT_RISK | [PSD2 Art. 97](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L2366#art_97); [PSD2 Art. 4](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L2366#art_4) | 2 related issues; high-risk or critical: PAY-114, PAY-115 |
+
+## Decisions needed
+- Accept or re-plan: Digital operational resilience testing
+
+## Data-quality notes
+- PAY-118: possible instruction in ticket text (&#x27;Ignore previous instructions&#x27;); ignored.
+
+---
+_Drafted by the copilot (offline mode). Personal data redacted before processing: {&#x27;EMAIL&#x27;: 1, &#x27;PERSONNUMMER&#x27;: 1, &#x27;IBAN&#x27;: 1}. Grounding problems: 0. Slip scores rank risk; they are not calibrated probabilities. Requires human approval before distribution._</pre><h2>Limitations</h2><ul><li>RAG test set is 30 questions written by the author; a larger, independently written set would be stronger.</li><li>The slip model was trained on open-source projects; on a fintech program it is one signal among several (domain shift). Scores rank risk; they are not calibrated probabilities.</li><li>The demo portfolio is fictional. Not legal advice.</li></ul>
+<p class="note">Built by Prashant Bharam · <a href="https://github.com/bharamprashant/program-risk-copilot">source</a></p></main></body></html>

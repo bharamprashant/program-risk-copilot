@@ -1,0 +1,52 @@
+{
+  "chosen": "logistic_regression",
+  "n_train": 4580,
+  "n_test": 1146,
+  "split": "time-based, newest 20% held out",
+  "results": [
+    {
+      "model": "baseline_random",
+      "roc_auc": 0.5,
+      "pr_auc": 0.122,
+      "base_rate": 0.122,
+      "top_20pct": {
+        "precision": 0.122,
+        "recall": 0.2,
+        "lift": 1.0
+      }
+    },
+    {
+      "model": "logistic_regression",
+      "roc_auc": 0.605,
+      "pr_auc": 0.212,
+      "base_rate": 0.122,
+      "top_20pct": {
+        "precision": 0.197,
+        "recall": 0.321,
+        "lift": 1.61
+      }
+    },
+    {
+      "model": "gradient_boosting",
+      "roc_auc": 0.536,
+      "pr_auc": 0.168,
+      "base_rate": 0.122,
+      "top_20pct": {
+        "precision": 0.157,
+        "recall": 0.257,
+        "lift": 1.29
+      }
+    },
+    {
+      "model": "logistic_no_text",
+      "roc_auc": 0.593,
+      "pr_auc": 0.155,
+      "base_rate": 0.122,
+      "top_20pct": {
+        "precision": 0.162,
+        "recall": 0.264,
+        "lift": 1.32
+      }
+    }
+  ]
+}

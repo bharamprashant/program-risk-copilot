@@ -1,0 +1,60 @@
+{"id": "q12", "question": "Do we need a crisis communication plan for informing clients during an outage?", "reg": "DORA", "article": 14, "split": "dev"}
+{"id": "q45", "question": "Do payment providers have to report major security incidents to the authorities?", "reg": "PSD2", "article": 96, "split": "test"}
+{"id": "q10", "question": "Do we need a business continuity policy and disaster recovery plans for IT?", "reg": "DORA", "article": 11, "split": "dev"}
+{"id": "q40", "question": "What rules apply to third parties that initiate payments from a customer's bank account?", "reg": "PSD2", "article": 66, "split": "test"}
+{"id": "oos00", "question": "What is the best pizza in Gothenburg?", "reg": null, "article": null, "split": "dev"}
+{"id": "oos03", "question": "How many story points should a login page be?", "reg": null, "article": null, "split": "test"}
+{"id": "q30", "question": "What legal bases allow us to process personal data?", "reg": "GDPR", "article": 6, "split": "dev"}
+{"id": "q16", "question": "What do we need in place to detect anomalous activity on our network?", "reg": "DORA", "article": 10, "split": "test"}
+{"id": "q00", "question": "Do we need to keep a list of every contract we have with tech and cloud suppliers?", "reg": "DORA", "article": 28, "split": "dev"}
+{"id": "q19", "question": "Can financial firms share cyber threat intelligence with each other?", "reg": "DORA", "article": 45, "split": "test"}
+{"id": "q24", "question": "A customer asks us to delete all their data. Do we have to?", "reg": "GDPR", "article": 17, "split": "dev"}
+{"id": "q11", "question": "Are we required to do post-incident reviews and learn from IT disruptions?", "reg": "DORA", "article": 13, "split": "test"}
+{"id": "q08", "question": "What is the board's responsibility for technology risk?", "reg": "DORA", "article": 5, "split": "dev"}
+{"id": "q29", "question": "What must be in our contract with a vendor that processes customer data on our behalf?", "reg": "GDPR", "article": 28, "split": "test"}
+{"id": "oos09", "question": "What are good practices for running a sprint retrospective?", "reg": null, "article": null, "split": "dev"}
+{"id": "oos01", "question": "How do I configure Kubernetes autoscaling?", "reg": null, "article": null, "split": "test"}
+{"id": "q21", "question": "When do we have to inform affected customers that their data was leaked?", "reg": "GDPR", "article": 34, "split": "dev"}
+{"id": "q39", "question": "What rules apply to apps that aggregate a user's bank account information?", "reg": "PSD2", "article": 67, "split": "test"}
+{"id": "q22", "question": "When is a privacy impact assessment required before launching a new feature?", "reg": "GDPR", "article": 35, "split": "dev"}
+{"id": "q47", "question": "How fast must we answer a customer complaint about a payment?", "reg": "PSD2", "article": 101, "split": "test"}
+{"id": "q18", "question": "What penalties can supervisors impose for breaching the operational resilience rules?", "reg": "DORA", "article": 50, "split": "dev"}
+{"id": "q31", "question": "What are the core principles like data minimisation and storage limitation?", "reg": "GDPR", "article": 5, "split": "test"}
+{"id": "q28", "question": "When must we appoint a data protection officer?", "reg": "GDPR", "article": 37, "split": "dev"}
+{"id": "q42", "question": "How long does a customer have to report an unauthorised transaction?", "reg": "PSD2", "article": 71, "split": "test"}
+{"id": "q46", "question": "By when must a payment reach the payee's account?", "reg": "PSD2", "article": 83, "split": "dev"}
+{"id": "oos08", "question": "How do I bake sourdough bread?", "reg": null, "article": null, "split": "test"}
+{"id": "oos06", "question": "What's the weather like in Stockholm in March?", "reg": null, "article": null, "split": "dev"}
+{"id": "q49", "question": "Can a customer cancel a payment order after it has been received?", "reg": "PSD2", "article": 80, "split": "test"}
+{"id": "q17", "question": "What should our process for managing and logging IT incidents look like?", "reg": "DORA", "article": 17, "split": "dev"}
+{"id": "q01", "question": "What clauses must our contracts with IT service vendors contain?", "reg": "DORA", "article": 30, "split": "test"}
+{"id": "q38", "question": "When do we need strong customer authentication with two factors for payments?", "reg": "PSD2", "article": 97, "split": "dev"}
+{"id": "q33", "question": "Can we approve or reject loan applications fully automatically without a human?", "reg": "GDPR", "article": 22, "split": "test"}
+{"id": "oos07", "question": "Can you recommend a good Jira dashboard template?", "reg": null, "article": null, "split": "dev"}
+{"id": "q36", "question": "How large can fines be for violating data protection rules?", "reg": "GDPR", "article": 83, "split": "test"}
+{"id": "q14", "question": "Is there a lighter IT risk framework for small financial firms?", "reg": "DORA", "article": 16, "split": "dev"}
+{"id": "q07", "question": "What should our ICT risk management framework include and how often must it be reviewed?", "reg": "DORA", "article": 6, "split": "test"}
+{"id": "q48", "question": "How does a customer give consent for a payment transaction and can they withdraw it?", "reg": "PSD2", "article": 64, "split": "dev"}
+{"id": "q43", "question": "How fast must we refund a customer for a payment they did not authorise?", "reg": "PSD2", "article": 73, "split": "test"}
+{"id": "q35", "question": "Can we use standard contractual clauses to transfer data outside the EU?", "reg": "GDPR", "article": 46, "split": "dev"}
+{"id": "q44", "question": "What operational and security risk controls must payment providers have?", "reg": "PSD2", "article": 95, "split": "test"}
+{"id": "q15", "question": "Must we identify and map all our IT assets and the business functions they support?", "reg": "DORA", "article": 8, "split": "dev"}
+{"id": "oos04", "question": "What is the Swedish corporate tax rate?", "reg": null, "article": null, "split": "test"}
+{"id": "q26", "question": "Can customers ask us to export their data in a machine-readable format to take to a competitor?", "reg": "GDPR", "article": 20, "split": "dev"}
+{"id": "q27", "question": "Do we need to keep records of our data processing activities?", "reg": "GDPR", "article": 30, "split": "test"}
+{"id": "q05", "question": "What are the general rules for our resilience testing programme?", "reg": "DORA", "article": 24, "split": "dev"}
+{"id": "q02", "question": "How do we decide whether an IT outage counts as major?", "reg": "DORA", "article": 18, "split": "test"}
+{"id": "q13", "question": "How does a cloud provider get designated as critical at EU level?", "reg": "DORA", "article": 31, "split": "dev"}
+{"id": "q32", "question": "What conditions apply when we rely on user consent, and can they withdraw it?", "reg": "GDPR", "article": 7, "split": "test"}
+{"id": "oos05", "question": "How do I write a list comprehension in Python?", "reg": null, "article": null, "split": "dev"}
+{"id": "q37", "question": "What security measures like encryption and pseudonymisation are expected?", "reg": "GDPR", "article": 32, "split": "test"}
+{"id": "q23", "question": "What does privacy by design and by default require from our product team?", "reg": "GDPR", "article": 25, "split": "dev"}
+{"id": "q06", "question": "Which kinds of tests, like vulnerability scans and scenario tests, should we run on our ICT systems?", "reg": "DORA", "article": 25, "split": "test"}
+{"id": "q34", "question": "Can we send customer data to a country the EU says has adequate protection?", "reg": "GDPR", "article": 45, "split": "dev"}
+{"id": "oos02", "question": "Who won the 2022 football World Cup?", "reg": null, "article": null, "split": "test"}
+{"id": "q04", "question": "Do we need red-team style penetration tests run against live production systems?", "reg": "DORA", "article": 26, "split": "dev"}
+{"id": "q03", "question": "Who do we have to notify when a major IT incident hits production?", "reg": "DORA", "article": 19, "split": "test"}
+{"id": "q41", "question": "How much of a fraudulent payment does the customer have to cover themselves?", "reg": "PSD2", "article": 74, "split": "dev"}
+{"id": "q25", "question": "A user wants a copy of all the data we hold about them. What are their rights?", "reg": "GDPR", "article": 15, "split": "test"}
+{"id": "q09", "question": "What are the requirements for backups and restoring data after an incident?", "reg": "DORA", "article": 12, "split": "dev"}
+{"id": "q20", "question": "How quickly must we tell the regulator about a leak of customer personal data?", "reg": "GDPR", "article": 33, "split": "test"}

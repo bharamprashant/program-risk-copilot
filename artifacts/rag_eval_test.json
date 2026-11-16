@@ -1,0 +1,84 @@
+{
+  "split": "test",
+  "n_in_scope": 25,
+  "n_out_of_scope": 5,
+  "hit@1": 0.44,
+  "recall@5": 0.68,
+  "mrr": 0.541,
+  "off_topic_refused": 1.0,
+  "real_questions_wrongly_refused": 0.04,
+  "misses": [
+    {
+      "q": "Do payment providers have to report major security incidents to the authorities?",
+      "want": "PSD2 96",
+      "got": [
+        "DORA 23",
+        "DORA 18",
+        "DORA 19"
+      ]
+    },
+    {
+      "q": "What rules apply to third parties that initiate payments from a customer's bank account?",
+      "want": "PSD2 66",
+      "got": [
+        "PSD2 97",
+        "PSD2 87",
+        "PSD2 4"
+      ]
+    },
+    {
+      "q": "What must be in our contract with a vendor that processes customer data on our behalf?",
+      "want": "GDPR 28",
+      "got": [
+        "PSD2 3",
+        "DORA 26",
+        "DORA 37"
+      ]
+    },
+    {
+      "q": "How long does a customer have to report an unauthorised transaction?",
+      "want": "PSD2 71",
+      "got": [
+        "PSD2 74",
+        "PSD2 3",
+        "PSD2 73"
+      ]
+    },
+    {
+      "q": "What clauses must our contracts with IT service vendors contain?",
+      "want": "DORA 30",
+      "got": [
+        "DORA 37",
+        "DORA 31",
+        "DORA 42"
+      ]
+    },
+    {
+      "q": "Can we approve or reject loan applications fully automatically without a human?",
+      "want": "GDPR 22",
+      "got": [
+        "GDPR 58",
+        "GDPR 57",
+        "DORA 5"
+      ]
+    },
+    {
+      "q": "How fast must we refund a customer for a payment they did not authorise?",
+      "want": "PSD2 73",
+      "got": [
+        "PSD2 76",
+        "PSD2 77",
+        "PSD2 74"
+      ]
+    },
+    {
+      "q": "How quickly must we tell the regulator about a leak of customer personal data?",
+      "want": "GDPR 33",
+      "got": [
+        "PSD2 94",
+        "GDPR 19",
+        "GDPR 15"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "split": "dev",
+  "n_in_scope": 25,
+  "n_out_of_scope": 5,
+  "hit@1": 0.56,
+  "recall@5": 0.84,
+  "mrr": 0.678,
+  "off_topic_refused": 1.0,
+  "real_questions_wrongly_refused": 0.0,
+  "misses": [
+    {
+      "q": "What legal bases allow us to process personal data?",
+      "want": "GDPR 6",
+      "got": [
+        "GDPR 4",
+        "GDPR 28",
+        "GDPR 21"
+      ]
+    },
+    {
+      "q": "Do we need to keep a list of every contract we have with tech and cloud suppliers?",
+      "want": "DORA 28",
+      "got": [
+        "DORA 31",
+        "DORA 40",
+        "DORA 30"
+      ]
+    },
+    {
+      "q": "A customer asks us to delete all their data. Do we have to?",
+      "want": "GDPR 17",
+      "got": [
+        "PSD2 3",
+        "PSD2 98",
+        "PSD2 97"
+      ]
+    },
+    {
+      "q": "What are the requirements for backups and restoring data after an incident?",
+      "want": "DORA 12",
+      "got": [
+        "DORA 13",
+        "DORA 18",
+        "DORA 19"
+      ]
+    }
+  ]
+}
