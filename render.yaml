@@ -1,0 +1,24 @@
+# Render Blueprint: deploys the public demo on Render's free plan, hosted in the EU (Frankfurt).
+# The API key is never stored here: Render asks for it when the Blueprint is created (sync: false).
+services:
+  - type: web
+    name: program-risk-copilot
+    runtime: python
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: GRADIO_SERVER_NAME=0.0.0.0 GRADIO_SERVER_PORT=$PORT python app.py
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: DEMO_DAILY_USD_CAP
+        value: "2.0"
+      - key: DEMO_RUNS_PER_VISITOR
+        value: "6"
+      - key: GRADIO_ANALYTICS_ENABLED
+        value: "False"

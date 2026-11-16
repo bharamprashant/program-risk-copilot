@@ -55,6 +55,12 @@ def clean(text: str, limit: int) -> str:
 
 
 def client_ip(request: gr.Request | None) -> str | None:
+    # Behind a hosting proxy (Render), the visitor's address is the first entry of X-Forwarded-For.
+    # It can be spoofed, so it only drives the per-visitor limit; the global daily dollar cap still applies.
+    headers = getattr(request, "headers", None) or {}
+    forwarded = headers.get("x-forwarded-for", "") if hasattr(headers, "get") else ""
+    if forwarded:
+        return forwarded.split(",")[0].strip()
     return getattr(getattr(request, "client", None), "host", None)
 
 
