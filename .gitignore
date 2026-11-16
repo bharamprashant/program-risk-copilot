@@ -6,3 +6,4 @@ data/raw/
 .pytest_cache/
 artifacts/audit_log.jsonl
 artifacts/*.log
+build/

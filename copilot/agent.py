@@ -75,10 +75,10 @@ projects, so treat it as one signal and say so where it matters.
 
 
 class Copilot:
-    def __init__(self):
-        self.retriever = Retriever.load()
-        self.risk = RiskModel()
-        data = json.loads(PORTFOLIO.read_text())
+    def __init__(self, data: dict | None = None, retriever: Retriever | None = None, risk: RiskModel | None = None):
+        self.retriever = retriever or Retriever.load()
+        self.risk = risk or RiskModel()
+        data = data or json.loads(PORTFOLIO.read_text())
         self.program, self.issues = data["program"], {}
         self.redactions, self.flags = {}, {}
         for i in data["issues"]:
@@ -177,9 +177,16 @@ class Copilot:
         }
         return brief, trace
 
-    def brief(self, mode: str = "offline") -> dict:
-        llm = LLM() if mode == "llm" else None
+    def brief(self, mode: str = "offline", llm: LLM | None = None) -> dict:
+        if mode == "llm" and llm is None:
+            llm = LLM()
+        llm = llm if mode == "llm" else None
         brief, trace = self.brief_llm(llm) if llm else self.brief_offline()
+        # Safety-critical reporting is guaranteed by code, not left to the model: every injection attempt
+        # detected by the guardrail appears in the briefing, whatever the agent wrote.
+        for key, found in self.flags.items():
+            if not any(key in n for n in brief["data_quality_notes"]):
+                brief["data_quality_notes"].append(f"{key}: ticket text contains an instruction ({found[0]!r}); ignored by the copilot.")
         problems = check_grounding(brief, self.retrieved, set(self.issues))
         result = {"program": self.program, "mode": mode, "brief": brief, "trace": trace,
                   "grounding_problems": problems, "redactions": self.redactions,
@@ -189,10 +196,10 @@ class Copilot:
         return result
 
 
-def to_markdown(r: dict) -> str:
+def to_markdown(r: dict, retriever: Retriever | None = None) -> str:
     b = r["brief"]
     icon = {"GREEN": "🟢", "AMBER": "🟠", "RED": "🔴", "ON_TRACK": "🟢", "AT_RISK": "🟠", "GAP": "🔴"}
-    cite = {c["id"]: c for c in Retriever.load().chunks}
+    cite = {c["id"]: c for c in (retriever or Retriever.load()).chunks}
     lines = [f"# Steering-committee briefing: {r['program']}", "",
              f"**Overall: {icon[b['overall_status']]} {b['overall_status']}**: {b['headline']}", "",
              "## Top delivery risks", "| Issue | What | Why | Action |", "|---|---|---|---|"]

@@ -48,7 +48,19 @@ Each entry: what I decided, why, what I measured, and what I would do next. Thes
 
 **18. Human approval and a tamper-evident log.** The agent can only read. A briefing is a draft until a named person approves it. Every draft and approval is written to a hash-chained log, and editing any past entry breaks the chain.
 
+## Evaluation findings
+
+**19. Query rewriting earned its cost.** On the held-out questions, citing the correct article rose from 68% to 88%, and real questions answered rose from 72% to 96%, for about $0.004 more per question.
+
+**20. The model mixed law with interpretation.** Reading the judge's reasons showed answers adding true but uncited facts (a free first copy comes from GDPR Art. 12, not the cited Art. 15) and practical opinions. The prompt now restricts claims to the cited text and puts advice in a labelled "Interpretation:" sentence. Judge-measured faithfulness rose from 29% to 42%.
+
+**21. The judge is noisy.** The same answers got different verdicts on different runs. Its score is directional until calibrated against human labels.
+
+**22. Safety reporting moved from the model to code.** In the first red-team run the agent ignored the injected instruction but did not report it. Code now guarantees every detected injection appears in the briefing.
+
 ## What I would do next
+
+- Hand-label 20 answers and measure judge agreement before trusting the faithfulness score.
 
 - Retrain the slip model on an organisation's own Jira history, and calibrate the scores.
 - Neural embeddings and a re-ranker, measured against the current test set.

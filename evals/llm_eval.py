@@ -28,7 +28,8 @@ def judge(llm: LLM, question: str, ans: str, chunk_ids: list[str]) -> bool:
                       output_config={"format": {"type": "json_schema", "schema": JUDGE_SCHEMA}},
                       messages=[{"role": "user", "content":
                                  f"{sources}\n\nQuestion: {question}\nAnswer: {ans}\n\n"
-                                 "Is every factual claim in the answer supported by the sources? Be strict."}])
+                                 "Is every factual claim in the answer supported by the sources? Be strict. "
+                                 "Ignore a final sentence that starts with 'Interpretation:' (it is labelled opinion, not a claim about the law)."}])
     return json.loads(LLM.text(resp))["supported"]
 
 

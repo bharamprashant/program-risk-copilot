@@ -48,6 +48,8 @@ class LLM:
 
     def create(self, purpose: str, model: str = MAIN, **kwargs):
         kwargs.setdefault("max_tokens", 16000)
+        # Thinking tokens count toward max_tokens; a tight cap can leave no room for the answer itself.
+        kwargs["max_tokens"] = max(kwargs["max_tokens"], 4000)
         if model == MAIN:
             # Opus 5.5: thinking is always on; effort is the depth control (default is medium, so set it).
             kwargs.setdefault("output_config", {}).setdefault("effort", "medium")
@@ -60,6 +62,8 @@ class LLM:
         self.record(purpose, model, resp.usage, time.time() - t0)
         if resp.stop_reason == "refusal":
             raise RuntimeError(f"{purpose}: model declined the request")
+        if resp.stop_reason == "max_tokens":
+            raise RuntimeError(f"{purpose}: hit max_tokens before finishing; raise the limit")
         return resp
 
     def record(self, purpose, model, usage, latency):

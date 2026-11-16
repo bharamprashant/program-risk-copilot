@@ -28,6 +28,9 @@ ANSWER_SCHEMA = {
 ANSWER_SYSTEM = """You answer compliance questions for an EU fintech using ONLY the regulation excerpts provided \
 inside <document> tags. Rules:
 - If the excerpts do not answer the question, set answerable to false and say what is missing.
+- State only what the cited excerpts say. Do not add facts from other articles or general knowledge, even true ones.
+- If practical interpretation would help, add it as one final sentence starting with "Interpretation:". \
+Keep it clearly separate from what the law says.
 - Cite the chunk_id of every excerpt you rely on. Never cite anything else.
 - Two to four sentences, plain English, for a program manager. This is not legal advice."""
 
@@ -57,9 +60,11 @@ def fuse(a: list[Hit], b: list[Hit], k: int = 5) -> list[Hit]:
     return [by_id[i] for i in sorted(scores, key=lambda i: -scores[i])[:k]]
 
 
-def answer(question: str, llm: LLM | None = None, use_rewrite: bool = True) -> dict:
+def answer(question: str, llm: LLM | None = None, use_rewrite: bool = True, offline: bool = False) -> dict:
     r = retriever()
-    if llm is None and available():
+    if offline:
+        llm = None
+    elif llm is None and available():
         llm = LLM()
     hits = r.search(question, k=5)
     rewritten = None
