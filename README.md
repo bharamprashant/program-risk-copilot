@@ -4,7 +4,7 @@
 
 It combines classic **machine learning**, **retrieval-augmented generation (RAG)**, an **LLM agent with tool use**, and **guardrails**. Every part is measured on held-out data, and the weaknesses are reported alongside the strengths.
 
-**[▶ Try the live demo](https://huggingface.co/spaces/prashantbharam/program-risk-copilot)** · **[📁 Program documents](docs/program/00-program-charter.md)** · **[📊 Results dashboard](docs/index.html)** · **[🧭 Design decisions](DECISIONS.md)**
+**[▶ Try the live demo](https://program-risk-copilot.onrender.com)** *(free hosting: the first visit after a quiet period takes ~50 s to wake up)* · **[📁 Program documents](docs/program/00-program-charter.md)** · **[📊 Results dashboard](docs/index.html)** · **[🧭 Design decisions](DECISIONS.md)**
 
 > **Run as a real program.** It's delivered for a realistic fictional client, *NordPay AB, a Swedish payment institution supervised by Finansinspektionen*, with a charter and business case, requirements with acceptance criteria, a DPIA, a DORA third-party assessment and an EU AI Act classification of the tool itself, a test and UAT plan, a go-live runbook, a RAID log and a status report, all in [`docs/program/`](docs/program/). Work is tracked in Jira (project `PRC`).
 
@@ -226,7 +226,7 @@ Neural embedding libraries didn't support Python 3.14 yet, so the meaning-based 
 | Made-up citations | Grounding check in code; unretrieved citations dropped |
 | Unreviewed AI output reaching executives | Draft-only until a named approver releases it |
 | Tampering with the record | Hash-chained audit log; `verify-audit` detects edits |
-| API key leakage | `.env` is git-ignored; the demo uses an encrypted Hugging Face secret; the deploy script copies an allowlist of files and refuses to build if anything resembling a secret appears |
+| API key leakage | `.env` is git-ignored; the live demo's key is an encrypted environment variable on Render; the deploy script copies an allowlist of files and refuses to build if anything resembling a secret appears |
 | Cost abuse of the public demo | A daily dollar cap and per-visitor run limit, both reserved *before* each call, plus a provider-side spend limit |
 
 ## 8. Cost

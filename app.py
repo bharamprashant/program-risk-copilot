@@ -1,4 +1,4 @@
-"""Public demo (Hugging Face Space). Free paths by default; live AI runs are budget-guarded.
+"""Public demo (Render, EU region). Free paths by default; live AI runs are budget-guarded.
 
 Design: product-style pages (copilot/ui.py) written for non-technical visitors. The Ask flow shows the
 copilot's understanding of the question first, then the answer, and lets the visitor correct the

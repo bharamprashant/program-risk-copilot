@@ -22,7 +22,7 @@ The copilot introduces new ICT third-party providers, so NordPay's DORA obligati
 
 | Requirement | Application | Status |
 |---|---|---|
-| **Register of information** (Art. 28(3)) | Add Anthropic (AI model API) and Hugging Face (demo hosting only, not used in the pilot) | ⏳ Action V3 |
+| **Register of information** (Art. 28(3)) | Add Anthropic (AI model API) and Render (demo hosting only, EU region; not used in the pilot) | ⏳ Action V3 |
 | **Does it support a critical or important function?** | **No.** The copilot advises; it doesn't run payments or a critical function, and the free baseline works without the vendor | Assessed |
 | **Contract provisions** (Art. 30) | Service description, data location, security, audit rights and exit terms in the vendor terms; gaps go to procurement | ⏳ Action V1 |
 | **Exit strategy** (Art. 28(8)) | The offline baseline needs no vendor; the model is behind one client wrapper, so it can be switched to another provider | ✅ Designed |

@@ -47,7 +47,7 @@ Design principle: **the AI proposes, code verifies, a human decides.** Safety ch
 
 ## 5. Integration and security design
 - **Jira:** read-only API token for a dedicated service account; scopes limited to `read:jira-work`; no write calls exist in the code.
-- **Secrets:** `.env` locally (git-ignored); an encrypted Hugging Face secret for the demo; a corporate vault in production.
+- **Secrets:** `.env` locally (git-ignored); an encrypted environment variable on Render for the demo; a corporate vault in production.
 - **Network:** outbound calls only to the Anthropic API and Jira; no inbound API exposed (Gradio endpoints private).
 - **Logging:** the audit log holds metadata only (status, counts, cost), with no ticket text. Feedback is PII-redacted.
 
@@ -55,5 +55,5 @@ Design principle: **the AI proposes, code verifies, a human decides.** Safety ch
 | Environment | Purpose | Data |
 |---|---|---|
 | Local | Development and evaluation | Public + demo |
-| Public demo (Hugging Face Space) | Portfolio demonstration | Demo only; spending guard |
+| Public demo ([Render, Frankfurt](https://program-risk-copilot.onrender.com)) | Portfolio demonstration | Demo only; spending guard; key as an encrypted environment variable |
 | Pilot (NordPay) | 1 program, 3 PMs | NordPay Jira, read-only |
