@@ -20,7 +20,9 @@ numpy==2.5.5
 pandas==3.1.1
 scikit-learn==1.9.1
 REQ
-cat > "$OUT"/README.md <<'MD'
+# Space card = Hugging Face front matter + the full project README, with repo-relative links made absolute.
+{
+cat <<'MD'
 ---
 title: Program Risk Copilot
 emoji: 📋
@@ -34,11 +36,12 @@ pinned: false
 license: mit
 short_description: ML slip risk + RAG over DORA/GDPR/PSD2 + AI agent
 ---
-Program Risk & Compliance Copilot. Source and full documentation:
-https://github.com/bharamprashant/program-risk-copilot
 MD
+sed -e 's#](docs/index.html)#](https://bharamprashant.github.io/program-risk-copilot/)#g' \
+    -e 's#](DECISIONS.md)#](https://github.com/bharamprashant/program-risk-copilot/blob/main/DECISIONS.md)#g' README.md
+} > "$OUT"/README.md
 # Safety check: refuse to continue if anything secret-looking slipped in.
-if grep -rIl "sk-ant-" "$OUT" >/dev/null 2>&1 || find "$OUT" -name ".env*" | grep -q .; then
+if grep -rIlE "sk-ant-[A-Za-z0-9_-]{20,}|hf_[A-Za-z0-9]{20,}" "$OUT" >/dev/null 2>&1 || find "$OUT" -name ".env*" | grep -q .; then
   echo "ABORT: secret-looking content found in $OUT" >&2; exit 1
 fi
 echo "built $OUT:"; find "$OUT" -type f | sort
