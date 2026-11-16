@@ -2,12 +2,12 @@
   "without_rewrite": {
     "rewrite": false,
     "citation_accuracy": 0.68,
-    "answered_in_scope": 0.72,
+    "answered_in_scope": 0.96,
     "off_topic_refused": 1.0,
     "faithfulness": 0.5,
-    "cost_per_question_usd": 0.01633,
-    "eval_cost_usd": 0.4995,
-    "avg_latency_s": 3.82,
+    "cost_per_question_usd": 0.01813,
+    "eval_cost_usd": 0.5574,
+    "avg_latency_s": 4.45,
     "per_question": [
       {
         "id": "q45",
@@ -16,12 +16,12 @@
         "cited_gold": false,
         "citations": [
           "DORA Art. 23",
-          "DORA Art. 18",
-          "DORA Art. 19"
+          "DORA Art. 19",
+          "DORA Art. 18"
         ],
         "gold": "PSD2 Art. 96",
-        "cost_usd": 0.02149,
-        "faithful": true
+        "cost_usd": 0.01969,
+        "faithful": false
       },
       {
         "id": "q40",
@@ -29,11 +29,12 @@
         "answered": true,
         "cited_gold": false,
         "citations": [
-          "PSD2 Art. 97"
+          "PSD2 Art. 97",
+          "PSD2 Art. 4"
         ],
         "gold": "PSD2 Art. 66",
-        "cost_usd": 0.02367,
-        "faithful": true
+        "cost_usd": 0.02744,
+        "faithful": false
       },
       {
         "id": "oos03",
@@ -51,10 +52,11 @@
         "cited_gold": true,
         "citations": [
           "DORA Art. 10",
+          "DORA Art. 17",
           "DORA Art. 15"
         ],
         "gold": "DORA Art. 10",
-        "cost_usd": 0.02096,
+        "cost_usd": 0.02259,
         "faithful": false
       },
       {
@@ -66,7 +68,7 @@
           "DORA Art. 45"
         ],
         "gold": "DORA Art. 45",
-        "cost_usd": 0.0194,
+        "cost_usd": 0.02168,
         "faithful": false
       },
       {
@@ -79,19 +81,20 @@
           "DORA Art. 17"
         ],
         "gold": "DORA Art. 13",
-        "cost_usd": 0.01904,
+        "cost_usd": 0.02244,
         "faithful": false
       },
       {
         "id": "q29",
         "in_scope": true,
-        "answered": false,
+        "answered": true,
         "cited_gold": false,
         "citations": [
           "DORA Art. 30"
         ],
         "gold": "GDPR Art. 28",
-        "cost_usd": 0.02126
+        "cost_usd": 0.01913,
+        "faithful": true
       },
       {
         "id": "oos01",
@@ -108,13 +111,13 @@
         "answered": true,
         "cited_gold": true,
         "citations": [
-          "PSD2 Art. 4",
           "PSD2 Art. 67",
+          "PSD2 Art. 4",
           "PSD2 Art. 97"
         ],
         "gold": "PSD2 Art. 67",
-        "cost_usd": 0.01788,
-        "faithful": true
+        "cost_usd": 0.0212,
+        "faithful": false
       },
       {
         "id": "q47",
@@ -125,7 +128,7 @@
           "PSD2 Art. 101"
         ],
         "gold": "PSD2 Art. 101",
-        "cost_usd": 0.01733,
+        "cost_usd": 0.01858,
         "faithful": false
       },
       {
@@ -138,19 +141,21 @@
           "GDPR Art. 25"
         ],
         "gold": "GDPR Art. 5",
-        "cost_usd": 0.02009,
+        "cost_usd": 0.02159,
         "faithful": true
       },
       {
         "id": "q42",
         "in_scope": true,
-        "answered": false,
+        "answered": true,
         "cited_gold": false,
         "citations": [
-          "PSD2 Art. 73"
+          "PSD2 Art. 73",
+          "PSD2 Art. 74"
         ],
         "gold": "PSD2 Art. 71",
-        "cost_usd": 0.01925
+        "cost_usd": 0.02244,
+        "faithful": true
       },
       {
         "id": "oos08",
@@ -171,19 +176,21 @@
           "PSD2 Art. 78"
         ],
         "gold": "PSD2 Art. 80",
-        "cost_usd": 0.0155,
+        "cost_usd": 0.01803,
         "faithful": false
       },
       {
         "id": "q01",
         "in_scope": true,
-        "answered": false,
+        "answered": true,
         "cited_gold": false,
         "citations": [
-          "DORA Art. 42"
+          "DORA Art. 42",
+          "DORA Art. 31"
         ],
         "gold": "DORA Art. 30",
-        "cost_usd": 0.02034
+        "cost_usd": 0.02519,
+        "faithful": false
       },
       {
         "id": "q33",
@@ -197,7 +204,7 @@
       {
         "id": "q36",
         "in_scope": true,
-        "answered": false,
+        "answered": true,
         "cited_gold": true,
         "citations": [
           "GDPR Art. 83",
@@ -205,7 +212,8 @@
           "GDPR Art. 70"
         ],
         "gold": "GDPR Art. 83",
-        "cost_usd": 0.01874
+        "cost_usd": 0.02176,
+        "faithful": true
       },
       {
         "id": "q07",
@@ -220,20 +228,22 @@
           "DORA Art. 16"
         ],
         "gold": "DORA Art. 6",
-        "cost_usd": 0.02586,
+        "cost_usd": 0.02791,
         "faithful": false
       },
       {
         "id": "q43",
         "in_scope": true,
-        "answered": false,
+        "answered": true,
         "cited_gold": false,
         "citations": [
           "PSD2 Art. 74",
-          "PSD2 Art. 77"
+          "PSD2 Art. 77",
+          "PSD2 Art. 76"
         ],
         "gold": "PSD2 Art. 73",
-        "cost_usd": 0.0207
+        "cost_usd": 0.02303,
+        "faithful": true
       },
       {
         "id": "q44",
@@ -246,7 +256,7 @@
           "DORA Art. 16"
         ],
         "gold": "PSD2 Art. 95",
-        "cost_usd": 0.0257,
+        "cost_usd": 0.0316,
         "faithful": false
       },
       {
@@ -267,7 +277,7 @@
           "GDPR Art. 30"
         ],
         "gold": "GDPR Art. 30",
-        "cost_usd": 0.02364,
+        "cost_usd": 0.02404,
         "faithful": false
       },
       {
@@ -281,7 +291,7 @@
           "DORA Art. 17"
         ],
         "gold": "DORA Art. 18",
-        "cost_usd": 0.01988,
+        "cost_usd": 0.02406,
         "faithful": true
       },
       {
@@ -293,7 +303,7 @@
           "GDPR Art. 7"
         ],
         "gold": "GDPR Art. 7",
-        "cost_usd": 0.01668,
+        "cost_usd": 0.01778,
         "faithful": true
       },
       {
@@ -302,11 +312,10 @@
         "answered": true,
         "cited_gold": true,
         "citations": [
-          "GDPR Art. 32",
-          "GDPR Art. 6"
+          "GDPR Art. 32"
         ],
         "gold": "GDPR Art. 32",
-        "cost_usd": 0.01873,
+        "cost_usd": 0.02089,
         "faithful": true
       },
       {
@@ -319,7 +328,7 @@
           "DORA Art. 24"
         ],
         "gold": "DORA Art. 25",
-        "cost_usd": 0.02226,
+        "cost_usd": 0.02472,
         "faithful": true
       },
       {
@@ -342,7 +351,7 @@
           "DORA Art. 18"
         ],
         "gold": "DORA Art. 19",
-        "cost_usd": 0.0262,
+        "cost_usd": 0.02586,
         "faithful": true
       },
       {
@@ -354,44 +363,45 @@
           "GDPR Art. 15"
         ],
         "gold": "GDPR Art. 15",
-        "cost_usd": 0.0179,
-        "faithful": false
+        "cost_usd": 0.01955,
+        "faithful": true
       },
       {
         "id": "q20",
         "in_scope": true,
-        "answered": false,
+        "answered": true,
         "cited_gold": false,
         "citations": [
-          "GDPR Art. 4"
+          "GDPR Art. 4",
+          "GDPR Art. 5"
         ],
         "gold": "GDPR Art. 33",
-        "cost_usd": 0.01741
+        "cost_usd": 0.02276,
+        "faithful": true
       }
     ]
   },
   "with_rewrite": {
     "rewrite": true,
-    "citation_accuracy": 0.88,
-    "answered_in_scope": 0.96,
+    "citation_accuracy": 1.0,
+    "answered_in_scope": 1.0,
     "off_topic_refused": 1.0,
-    "faithfulness": 0.417,
-    "cost_per_question_usd": 0.01976,
-    "eval_cost_usd": 0.6055,
-    "avg_latency_s": 5.67,
+    "faithfulness": 0.2,
+    "cost_per_question_usd": 0.01759,
+    "eval_cost_usd": 0.5409,
+    "avg_latency_s": 6.11,
     "per_question": [
       {
         "id": "q45",
         "in_scope": true,
         "answered": true,
-        "cited_gold": false,
+        "cited_gold": true,
         "citations": [
-          "DORA Art. 23",
-          "DORA Art. 18",
-          "DORA Art. 19"
+          "PSD2 Art. 96",
+          "DORA Art. 23"
         ],
         "gold": "PSD2 Art. 96",
-        "cost_usd": 0.02166,
+        "cost_usd": 0.01737,
         "faithful": false
       },
       {
@@ -400,24 +410,22 @@
         "answered": true,
         "cited_gold": true,
         "citations": [
-          "PSD2 Art. 66",
           "PSD2 Art. 97",
-          "PSD2 Art. 64"
+          "PSD2 Art. 66",
+          "PSD2 Art. 47"
         ],
         "gold": "PSD2 Art. 66",
-        "cost_usd": 0.0202,
-        "faithful": true
+        "cost_usd": 0.02043,
+        "faithful": false
       },
       {
         "id": "oos03",
         "in_scope": false,
         "answered": false,
         "cited_gold": false,
-        "citations": [
-          "PSD2 Art. 97"
-        ],
+        "citations": [],
         "gold": null,
-        "cost_usd": 0.01149
+        "cost_usd": 0.00011
       },
       {
         "id": "q16",
@@ -426,10 +434,10 @@
         "cited_gold": true,
         "citations": [
           "DORA Art. 10",
-          "DORA Art. 17"
+          "DORA Art. 15"
         ],
         "gold": "DORA Art. 10",
-        "cost_usd": 0.02068,
+        "cost_usd": 0.02224,
         "faithful": false
       },
       {
@@ -441,7 +449,7 @@
           "DORA Art. 45"
         ],
         "gold": "DORA Art. 45",
-        "cost_usd": 0.02067,
+        "cost_usd": 0.0214,
         "faithful": false
       },
       {
@@ -454,20 +462,20 @@
           "DORA Art. 17"
         ],
         "gold": "DORA Art. 13",
-        "cost_usd": 0.02103,
-        "faithful": true
+        "cost_usd": 0.02108,
+        "faithful": false
       },
       {
         "id": "q29",
         "in_scope": true,
         "answered": true,
-        "cited_gold": false,
+        "cited_gold": true,
         "citations": [
-          "DORA Art. 30",
-          "DORA Art. 28"
+          "GDPR Art. 28",
+          "GDPR Art. 29"
         ],
         "gold": "GDPR Art. 28",
-        "cost_usd": 0.02347,
+        "cost_usd": 0.0232,
         "faithful": false
       },
       {
@@ -475,11 +483,9 @@
         "in_scope": false,
         "answered": false,
         "cited_gold": false,
-        "citations": [
-          "DORA Art. 9"
-        ],
+        "citations": [],
         "gold": null,
-        "cost_usd": 0.01878
+        "cost_usd": 0.00012
       },
       {
         "id": "q39",
@@ -487,12 +493,13 @@
         "answered": true,
         "cited_gold": true,
         "citations": [
+          "PSD2 Art. 4",
           "PSD2 Art. 67",
           "PSD2 Art. 97"
         ],
         "gold": "PSD2 Art. 67",
-        "cost_usd": 0.018,
-        "faithful": true
+        "cost_usd": 0.02395,
+        "faithful": false
       },
       {
         "id": "q47",
@@ -503,7 +510,7 @@
           "PSD2 Art. 101"
         ],
         "gold": "PSD2 Art. 101",
-        "cost_usd": 0.01785,
+        "cost_usd": 0.01664,
         "faithful": false
       },
       {
@@ -516,8 +523,8 @@
           "GDPR Art. 25"
         ],
         "gold": "GDPR Art. 5",
-        "cost_usd": 0.02133,
-        "faithful": true
+        "cost_usd": 0.02033,
+        "faithful": false
       },
       {
         "id": "q42",
@@ -525,10 +532,11 @@
         "answered": true,
         "cited_gold": true,
         "citations": [
-          "PSD2 Art. 71"
+          "PSD2 Art. 71",
+          "PSD2 Art. 52"
         ],
         "gold": "PSD2 Art. 71",
-        "cost_usd": 0.01613,
+        "cost_usd": 0.01919,
         "faithful": false
       },
       {
@@ -538,7 +546,7 @@
         "cited_gold": false,
         "citations": [],
         "gold": null,
-        "cost_usd": 0.01635
+        "cost_usd": 0.00012
       },
       {
         "id": "q49",
@@ -547,11 +555,10 @@
         "cited_gold": true,
         "citations": [
           "PSD2 Art. 80",
-          "PSD2 Art. 78",
-          "PSD2 Art. 64"
+          "PSD2 Art. 78"
         ],
         "gold": "PSD2 Art. 80",
-        "cost_usd": 0.01691,
+        "cost_usd": 0.01799,
         "faithful": false
       },
       {
@@ -564,7 +571,7 @@
           "DORA Art. 28"
         ],
         "gold": "DORA Art. 30",
-        "cost_usd": 0.02168,
+        "cost_usd": 0.02426,
         "faithful": false
       },
       {
@@ -574,23 +581,25 @@
         "cited_gold": true,
         "citations": [
           "GDPR Art. 22",
-          "GDPR Art. 14"
+          "GDPR Art. 13",
+          "GDPR Art. 14",
+          "GDPR Art. 15"
         ],
         "gold": "GDPR Art. 22",
-        "cost_usd": 0.02697,
+        "cost_usd": 0.0211,
         "faithful": true
       },
       {
         "id": "q36",
         "in_scope": true,
-        "answered": false,
+        "answered": true,
         "cited_gold": true,
         "citations": [
-          "GDPR Art. 83",
-          "GDPR Art. 84"
+          "GDPR Art. 83"
         ],
         "gold": "GDPR Art. 83",
-        "cost_usd": 0.02083
+        "cost_usd": 0.02179,
+        "faithful": true
       },
       {
         "id": "q07",
@@ -599,13 +608,13 @@
         "cited_gold": true,
         "citations": [
           "DORA Art. 6",
+          "DORA Art. 6",
+          "DORA Art. 14",
           "DORA Art. 28",
-          "DORA Art. 24",
-          "DORA Art. 5",
           "DORA Art. 16"
         ],
         "gold": "DORA Art. 6",
-        "cost_usd": 0.02934,
+        "cost_usd": 0.02229,
         "faithful": false
       },
       {
@@ -617,22 +626,20 @@
           "PSD2 Art. 73"
         ],
         "gold": "PSD2 Art. 73",
-        "cost_usd": 0.01751,
+        "cost_usd": 0.0192,
         "faithful": false
       },
       {
         "id": "q44",
         "in_scope": true,
         "answered": true,
-        "cited_gold": false,
+        "cited_gold": true,
         "citations": [
-          "PSD2 Art. 97",
-          "DORA Art. 16",
-          "DORA Art. 23",
-          "DORA Art. 9"
+          "PSD2 Art. 95",
+          "DORA Art. 23"
         ],
         "gold": "PSD2 Art. 95",
-        "cost_usd": 0.03971,
+        "cost_usd": 0.02171,
         "faithful": false
       },
       {
@@ -642,7 +649,7 @@
         "cited_gold": false,
         "citations": [],
         "gold": null,
-        "cost_usd": 2e-05
+        "cost_usd": 0.00012
       },
       {
         "id": "q27",
@@ -651,11 +658,11 @@
         "cited_gold": true,
         "citations": [
           "GDPR Art. 30",
-          "GDPR Art. 30"
+          "GDPR Art. 49"
         ],
         "gold": "GDPR Art. 30",
-        "cost_usd": 0.01725,
-        "faithful": true
+        "cost_usd": 0.02077,
+        "faithful": false
       },
       {
         "id": "q02",
@@ -668,8 +675,8 @@
           "DORA Art. 17"
         ],
         "gold": "DORA Art. 18",
-        "cost_usd": 0.02349,
-        "faithful": true
+        "cost_usd": 0.02377,
+        "faithful": false
       },
       {
         "id": "q32",
@@ -677,10 +684,13 @@
         "answered": true,
         "cited_gold": true,
         "citations": [
-          "GDPR Art. 7"
+          "GDPR Art. 7",
+          "GDPR Art. 13",
+          "GDPR Art. 14",
+          "GDPR Art. 8"
         ],
         "gold": "GDPR Art. 7",
-        "cost_usd": 0.01767,
+        "cost_usd": 0.02033,
         "faithful": true
       },
       {
@@ -690,10 +700,10 @@
         "cited_gold": true,
         "citations": [
           "GDPR Art. 32",
-          "GDPR Art. 6"
+          "GDPR Art. 25"
         ],
         "gold": "GDPR Art. 32",
-        "cost_usd": 0.01787,
+        "cost_usd": 0.02121,
         "faithful": true
       },
       {
@@ -703,11 +713,12 @@
         "cited_gold": true,
         "citations": [
           "DORA Art. 25",
-          "DORA Art. 24"
+          "DORA Art. 24",
+          "DORA Art. 11"
         ],
         "gold": "DORA Art. 25",
-        "cost_usd": 0.0203,
-        "faithful": true
+        "cost_usd": 0.02357,
+        "faithful": false
       },
       {
         "id": "oos02",
@@ -716,7 +727,7 @@
         "cited_gold": false,
         "citations": [],
         "gold": null,
-        "cost_usd": 0.01743
+        "cost_usd": 0.00012
       },
       {
         "id": "q03",
@@ -729,8 +740,8 @@
           "DORA Art. 18"
         ],
         "gold": "DORA Art. 19",
-        "cost_usd": 0.02339,
-        "faithful": false
+        "cost_usd": 0.02639,
+        "faithful": true
       },
       {
         "id": "q25",
@@ -741,7 +752,7 @@
           "GDPR Art. 15"
         ],
         "gold": "GDPR Art. 15",
-        "cost_usd": 0.01988,
+        "cost_usd": 0.01878,
         "faithful": false
       },
       {
@@ -750,10 +761,11 @@
         "answered": true,
         "cited_gold": true,
         "citations": [
-          "GDPR Art. 33"
+          "GDPR Art. 33",
+          "GDPR Art. 4"
         ],
         "gold": "GDPR Art. 33",
-        "cost_usd": 0.01481,
+        "cost_usd": 0.0182,
         "faithful": false
       }
     ]
@@ -777,7 +789,7 @@
       "search_regulations",
       "search_regulations"
     ],
-    "cost_usd": 0.1427,
-    "latency_s": 38.2
+    "cost_usd": 0.1403,
+    "latency_s": 36.3
   }
 }

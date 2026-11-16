@@ -1,0 +1,30 @@
+{"id": "m00", "kind": "typo", "question": "do we hav to keep list of all cloud vendor contract??", "gold": ["DORA Art. 28"], "split": "dev"}
+{"id": "m01", "kind": "typo", "question": "breach happen customer data, how many hour to tell regulator", "gold": ["GDPR Art. 33"], "split": "test"}
+{"id": "m02", "kind": "typo", "question": "bank can say no loan with only computer no human?", "gold": ["GDPR Art. 22"], "split": "dev"}
+{"id": "m03", "kind": "typo", "question": "custmer card stolen and used, how much he must pay", "gold": ["PSD2 Art. 74"], "split": "test"}
+{"id": "m04", "kind": "typo", "question": "what fine max if we break gdpr", "gold": ["GDPR Art. 83"], "split": "dev"}
+{"id": "m05", "kind": "typo", "question": "need 2 factor login for card payment in app or not", "gold": ["PSD2 Art. 97"], "split": "test"}
+{"id": "m06", "kind": "typo", "question": "user want all his data copy what we must give", "gold": ["GDPR Art. 15"], "split": "dev"}
+{"id": "m07", "kind": "typo", "question": "how long time customer has for complain payment not done by him", "gold": ["PSD2 Art. 71"], "split": "test"}
+{"id": "m08", "kind": "typo", "question": "we must test our systems with hackers attack real prod?", "gold": ["DORA Art. 26"], "split": "dev"}
+{"id": "m09", "kind": "typo", "question": "backup how to do and restore after cyber attack whats the rule", "gold": ["DORA Art. 12"], "split": "test"}
+{"id": "m10", "kind": "swedish", "question": "Måste vi föra ett register över alla avtal med molnleverantörer?", "gold": ["DORA Art. 28"], "split": "dev"}
+{"id": "m11", "kind": "swedish", "question": "Hur snabbt måste vi anmäla en personuppgiftsincident till tillsynsmyndigheten?", "gold": ["GDPR Art. 33"], "split": "test"}
+{"id": "m12", "kind": "swedish", "question": "Får vi neka ett lån helt automatiskt utan att en människa tittar på det?", "gold": ["GDPR Art. 22"], "split": "dev"}
+{"id": "m13", "kind": "swedish", "question": "Kunden vill att vi raderar all hans data, måste vi göra det?", "gold": ["GDPR Art. 17"], "split": "test"}
+{"id": "m14", "kind": "swedish", "question": "När behövs stark kundautentisering vid betalningar?", "gold": ["PSD2 Art. 97"], "split": "dev"}
+{"id": "m15", "kind": "swedish", "question": "Vem ska vi rapportera till när en allvarlig IT-incident inträffar?", "gold": ["DORA Art. 19"], "split": "test"}
+{"id": "m16", "kind": "situation", "question": "our AWS went down for 6 hours yesterday, do we need to tell anyone?", "gold": ["DORA Art. 19", "DORA Art. 18"], "split": "dev"}
+{"id": "m17", "kind": "situation", "question": "we're signing with a new SaaS vendor next week, anything regulation-wise to put in the contract?", "gold": ["DORA Art. 30", "DORA Art. 28"], "split": "test"}
+{"id": "m18", "kind": "situation", "question": "marketing wants to use customer data for a new AI scoring model, what should we do first?", "gold": ["GDPR Art. 35", "GDPR Art. 6", "GDPR Art. 22"], "split": "dev"}
+{"id": "m19", "kind": "situation", "question": "a customer says someone emptied his account with an app he never authorised, what now?", "gold": ["PSD2 Art. 73", "PSD2 Art. 74"], "split": "test"}
+{"id": "m20", "kind": "situation", "question": "board asked who is responsible for IT risk here", "gold": ["DORA Art. 5"], "split": "dev"}
+{"id": "m21", "kind": "situation", "question": "how long can we keep old customer records", "gold": ["GDPR Art. 5"], "split": "test"}
+{"id": "m22", "kind": "situation", "question": "our fintech app wants to read customers' bank balances from other banks", "gold": ["PSD2 Art. 67"], "split": "dev"}
+{"id": "m23", "kind": "situation", "question": "is there any lighter regime for us, we're a small payment firm, for IT risk", "gold": ["DORA Art. 16"], "split": "test"}
+{"id": "m24", "kind": "off_topic", "question": "wat is best pizza gbg", "gold": [], "split": "dev"}
+{"id": "m25", "kind": "off_topic", "question": "Vad blir vädret i Göteborg imorgon?", "gold": [], "split": "test"}
+{"id": "m26", "kind": "off_topic", "question": "how to make my sprint velocity go up lol", "gold": [], "split": "dev"}
+{"id": "m27", "kind": "off_topic", "question": "write me a poem about kafka", "gold": [], "split": "test"}
+{"id": "m28", "kind": "off_topic", "question": "who will win allsvenskan this year", "gold": [], "split": "dev"}
+{"id": "m29", "kind": "off_topic", "question": "kubernetes pod keeps crashing help", "gold": [], "split": "test"}

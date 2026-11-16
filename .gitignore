@@ -7,3 +7,4 @@ data/raw/
 artifacts/audit_log.jsonl
 artifacts/*.log
 build/
+artifacts/feedback.jsonl

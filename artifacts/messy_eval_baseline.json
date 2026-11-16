@@ -1,0 +1,483 @@
+{
+  "tag": "baseline",
+  "in_scope_correct": 0.917,
+  "in_scope_refused": 0.083,
+  "off_topic_refused": 1.0,
+  "by_kind": {
+    "typo": {
+      "correct": "9/10",
+      "refused": 1
+    },
+    "swedish": {
+      "correct": "6/6",
+      "refused": 0
+    },
+    "situation": {
+      "correct": "7/8",
+      "refused": 1
+    },
+    "off_topic": {
+      "correct": "6/6",
+      "refused": 6
+    }
+  },
+  "cost_usd": 0.5339,
+  "per_question": [
+    {
+      "id": "m00",
+      "kind": "typo",
+      "question": "do we hav to keep list of all cloud vendor contract??",
+      "gold": [
+        "DORA Art. 28"
+      ],
+      "answered": true,
+      "cited": [
+        "DORA Art. 28"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m01",
+      "kind": "typo",
+      "question": "breach happen customer data, how many hour to tell regulator",
+      "gold": [
+        "GDPR Art. 33"
+      ],
+      "answered": true,
+      "cited": [
+        "GDPR Art. 33"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m02",
+      "kind": "typo",
+      "question": "bank can say no loan with only computer no human?",
+      "gold": [
+        "GDPR Art. 22"
+      ],
+      "answered": true,
+      "cited": [
+        "GDPR Art. 22",
+        "GDPR Art. 15"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m03",
+      "kind": "typo",
+      "question": "custmer card stolen and used, how much he must pay",
+      "gold": [
+        "PSD2 Art. 74"
+      ],
+      "answered": true,
+      "cited": [
+        "PSD2 Art. 74",
+        "PSD2 Art. 74",
+        "PSD2 Art. 72"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m04",
+      "kind": "typo",
+      "question": "what fine max if we break gdpr",
+      "gold": [
+        "GDPR Art. 83"
+      ],
+      "answered": false,
+      "cited": [
+        "GDPR Art. 83"
+      ],
+      "correct": false,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m05",
+      "kind": "typo",
+      "question": "need 2 factor login for card payment in app or not",
+      "gold": [
+        "PSD2 Art. 97"
+      ],
+      "answered": true,
+      "cited": [
+        "PSD2 Art. 97"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m06",
+      "kind": "typo",
+      "question": "user want all his data copy what we must give",
+      "gold": [
+        "GDPR Art. 15"
+      ],
+      "answered": true,
+      "cited": [
+        "GDPR Art. 15",
+        "GDPR Art. 20"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m07",
+      "kind": "typo",
+      "question": "how long time customer has for complain payment not done by him",
+      "gold": [
+        "PSD2 Art. 71"
+      ],
+      "answered": true,
+      "cited": [
+        "PSD2 Art. 71"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m08",
+      "kind": "typo",
+      "question": "we must test our systems with hackers attack real prod?",
+      "gold": [
+        "DORA Art. 26"
+      ],
+      "answered": true,
+      "cited": [
+        "DORA Art. 26",
+        "DORA Art. 3",
+        "DORA Art. 24"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m09",
+      "kind": "typo",
+      "question": "backup how to do and restore after cyber attack whats the rule",
+      "gold": [
+        "DORA Art. 12"
+      ],
+      "answered": true,
+      "cited": [
+        "DORA Art. 12",
+        "DORA Art. 11",
+        "DORA Art. 13"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m10",
+      "kind": "swedish",
+      "question": "Måste vi föra ett register över alla avtal med molnleverantörer?",
+      "gold": [
+        "DORA Art. 28"
+      ],
+      "answered": true,
+      "cited": [
+        "DORA Art. 28"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m11",
+      "kind": "swedish",
+      "question": "Hur snabbt måste vi anmäla en personuppgiftsincident till tillsynsmyndigheten?",
+      "gold": [
+        "GDPR Art. 33"
+      ],
+      "answered": true,
+      "cited": [
+        "GDPR Art. 33"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m12",
+      "kind": "swedish",
+      "question": "Får vi neka ett lån helt automatiskt utan att en människa tittar på det?",
+      "gold": [
+        "GDPR Art. 22"
+      ],
+      "answered": true,
+      "cited": [
+        "GDPR Art. 22",
+        "GDPR Art. 15"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m13",
+      "kind": "swedish",
+      "question": "Kunden vill att vi raderar all hans data, måste vi göra det?",
+      "gold": [
+        "GDPR Art. 17"
+      ],
+      "answered": true,
+      "cited": [
+        "GDPR Art. 17",
+        "GDPR Art. 19"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m14",
+      "kind": "swedish",
+      "question": "När behövs stark kundautentisering vid betalningar?",
+      "gold": [
+        "PSD2 Art. 97"
+      ],
+      "answered": true,
+      "cited": [
+        "PSD2 Art. 97",
+        "PSD2 Art. 98"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m15",
+      "kind": "swedish",
+      "question": "Vem ska vi rapportera till när en allvarlig IT-incident inträffar?",
+      "gold": [
+        "DORA Art. 19"
+      ],
+      "answered": true,
+      "cited": [
+        "DORA Art. 19",
+        "DORA Art. 3"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m16",
+      "kind": "situation",
+      "question": "our AWS went down for 6 hours yesterday, do we need to tell anyone?",
+      "gold": [
+        "DORA Art. 19",
+        "DORA Art. 18"
+      ],
+      "answered": false,
+      "cited": [
+        "DORA Art. 18",
+        "GDPR Art. 33"
+      ],
+      "correct": false,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m17",
+      "kind": "situation",
+      "question": "we're signing with a new SaaS vendor next week, anything regulation-wise to put in the contract?",
+      "gold": [
+        "DORA Art. 30",
+        "DORA Art. 28"
+      ],
+      "answered": true,
+      "cited": [
+        "DORA Art. 30",
+        "DORA Art. 28",
+        "DORA Art. 30"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m18",
+      "kind": "situation",
+      "question": "marketing wants to use customer data for a new AI scoring model, what should we do first?",
+      "gold": [
+        "GDPR Art. 35",
+        "GDPR Art. 6",
+        "GDPR Art. 22"
+      ],
+      "answered": true,
+      "cited": [
+        "GDPR Art. 35",
+        "GDPR Art. 22"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m19",
+      "kind": "situation",
+      "question": "a customer says someone emptied his account with an app he never authorised, what now?",
+      "gold": [
+        "PSD2 Art. 73",
+        "PSD2 Art. 74"
+      ],
+      "answered": true,
+      "cited": [
+        "PSD2 Art. 74",
+        "PSD2 Art. 97",
+        "PSD2 Art. 92"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m20",
+      "kind": "situation",
+      "question": "board asked who is responsible for IT risk here",
+      "gold": [
+        "DORA Art. 5"
+      ],
+      "answered": true,
+      "cited": [
+        "DORA Art. 6",
+        "DORA Art. 5",
+        "DORA Art. 6"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m21",
+      "kind": "situation",
+      "question": "how long can we keep old customer records",
+      "gold": [
+        "GDPR Art. 5"
+      ],
+      "answered": true,
+      "cited": [
+        "PSD2 Art. 21",
+        "GDPR Art. 5"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m22",
+      "kind": "situation",
+      "question": "our fintech app wants to read customers' bank balances from other banks",
+      "gold": [
+        "PSD2 Art. 67"
+      ],
+      "answered": true,
+      "cited": [
+        "PSD2 Art. 67",
+        "PSD2 Art. 97"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m23",
+      "kind": "situation",
+      "question": "is there any lighter regime for us, we're a small payment firm, for IT risk",
+      "gold": [
+        "DORA Art. 16"
+      ],
+      "answered": true,
+      "cited": [
+        "DORA Art. 16",
+        "DORA Art. 16",
+        "DORA Art. 3",
+        "DORA Art. 4"
+      ],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m24",
+      "kind": "off_topic",
+      "question": "wat is best pizza gbg",
+      "gold": [],
+      "answered": false,
+      "cited": [],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m25",
+      "kind": "off_topic",
+      "question": "Vad blir vädret i Göteborg imorgon?",
+      "gold": [],
+      "answered": false,
+      "cited": [],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m26",
+      "kind": "off_topic",
+      "question": "how to make my sprint velocity go up lol",
+      "gold": [],
+      "answered": false,
+      "cited": [],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m27",
+      "kind": "off_topic",
+      "question": "write me a poem about kafka",
+      "gold": [],
+      "answered": false,
+      "cited": [],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m28",
+      "kind": "off_topic",
+      "question": "who will win allsvenskan this year",
+      "gold": [],
+      "answered": false,
+      "cited": [],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    },
+    {
+      "id": "m29",
+      "kind": "off_topic",
+      "question": "kubernetes pod keeps crashing help",
+      "gold": [],
+      "answered": false,
+      "cited": [],
+      "correct": true,
+      "understood_as": null,
+      "language": null
+    }
+  ]
+}

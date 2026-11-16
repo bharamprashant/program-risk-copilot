@@ -4,7 +4,9 @@
 
 It combines classic **machine learning**, **retrieval-augmented generation (RAG)**, an **LLM agent with tool use**, and **guardrails**. Every part is measured on held-out data, and the weaknesses are reported alongside the strengths.
 
-**[▶ Try the live demo](https://huggingface.co/spaces/prashantbharam/program-risk-copilot)** · **[📊 Results dashboard](docs/index.html)** · **[🧭 Design decisions](DECISIONS.md)**
+**[▶ Try the live demo](https://huggingface.co/spaces/prashantbharam/program-risk-copilot)** · **[📁 Program documents](docs/program/00-program-charter.md)** · **[📊 Results dashboard](docs/index.html)** · **[🧭 Design decisions](DECISIONS.md)**
+
+> **Run as a real program.** It's delivered for a realistic fictional client, *NordPay AB, a Swedish payment institution supervised by Finansinspektionen*, with a charter and business case, requirements with acceptance criteria, a DPIA, a DORA third-party assessment and an EU AI Act classification of the tool itself, a test and UAT plan, a go-live runbook, a RAID log and a status report, all in [`docs/program/`](docs/program/). Work is tracked in Jira (project `PRC`).
 
 ---
 
@@ -75,6 +77,15 @@ flowchart LR
 | **Apache Jira** (public) | 9,000 resolved issues from Kafka, Spark, Flink, Hive, Cassandra and HBase, with full change history | Used to train the slip model; real teams, real slips |
 | **Demo portfolio** | 24 fictional tickets: *"Nordic payments platform: DORA readiness"* | Contains planted personal data and a planted prompt injection, to test the guardrails |
 
+### 4.1a Data sources and licensing
+| Source | Owner | How it was accessed | Used for |
+|---|---|---|---|
+| DORA (Reg. 2022/2554), GDPR (Reg. 2016/679), PSD2 (Dir. 2015/2366) | European Union | EU Publications Office content API. Reuse permitted under Commission Decision 2011/833/EU; only the official EU texts are authentic | Retrieval corpus (423 chunks) |
+| Apache Software Foundation Jira: [issues.apache.org/jira](https://issues.apache.org/jira) (Kafka, Spark, Flink, Hive, Cassandra, HBase) | The Apache Software Foundation | Public REST API, no login, rate-limited to 1 request/second | Training the slip model (9,000 resolved issues, 2023–2026). Raw data isn't redistributed in this repo |
+| Demo portfolio | Fictional | `data/demo/portfolio.json` | Demo and tests |
+
+None of the training data comes from a private or company Jira. In a real deployment the copilot connects to the company's own Jira through a read-only service account (see [solution design](docs/program/02-solution-design.md)).
+
 ### 4.2 Slip-risk model (classic ML): `copilot/risk/`
 - **Label:** a ticket "slipped" if a specific planned release was removed from it, meaning it missed the release it was planned for. Placeholder versions and bulk release renames are excluded (see [learning #1](#6-what-i-learned-building-it)).
 - **Features, using only what's known when work is planned:** project, type, priority, number of components and labels, description length, whether it's unassigned or self-assigned, the assignee's open workload, and the ticket's words (TF-IDF). Anything recorded later, such as resolution dates, final links or final versions, is excluded to prevent **data leakage**.
@@ -138,7 +149,13 @@ All numbers are on **held-out test data** unless marked otherwise.
 |---|---|---|---|---|---|---|
 | v1 · no rewriting | 68% | 72% | 100% | 33% | $0.015 | 3.4 s |
 | v1 · with rewriting | 84% | 84% | 100% | 29% | $0.017 | 4.8 s |
-| **v2 · with rewriting + law/interpretation split** | **88%** | **96%** | **100%** | **42%** | **$0.020** | **5.7 s** |
+| v2 · with rewriting + law/interpretation split | 88% | 96% | 100% | 42% | $0.020 | 5.7 s |
+| v3 · off-topic detection in rewriting | 92% | 96% | 100% | 46% | $0.018 | 5.3 s |
+| **v4 · understanding step + partial answers + multi-query** | **100%** | **100%** | **100%** | **20%** ⚠️ | **$0.018** | **6.1 s** |
+
+**Messy questions** (typos, broken English, Swedish, situations; 24 in scope + 6 off-topic): v4 cites the correct article for **88%**, with **no wrongly refused questions** (10/10 typos, 5/6 Swedish, 6/8 situations), and refuses 6/6 off-topic questions.
+
+**The trade-off in v4:** the copilot now always tries to help and finds the right law, but its longer, partial answers include more detail the AI judge rates as unsupported, and the judge itself is noisy. That's recorded as the top open risk, with a go-live gate of ≥ 80% on human-graded answers ([RAID R1–R2](docs/program/06-raid-and-decision-log.md)).
 
 ### Slip-risk model (1,146 test tickets, 12% slipped)
 | Model | ROC-AUC | PR-AUC | Slips caught when reviewing the riskiest 20% | Lift |
@@ -159,7 +176,7 @@ All numbers are on **held-out test data** unless marked otherwise.
 
 ## 6. What I learned building it
 
-These are the moments where the first approach was wrong, and what I changed. They taught me more than anything that worked first time.
+These are the moments where the first approach was wrong (13 of them), and what I changed. They taught me more than anything that worked first time.
 
 **1 · The label matters more than the algorithm.**
 My first slip definition gave the Cassandra project an **80% slip rate**, against 6–25% for the others. Digging into the change history showed why: Cassandra plans work against placeholder versions ("5.x") that are swapped for the exact version on merge, and whole releases get renamed in bulk. Neither is a slip. Excluding placeholders and bulk edits (30 or more tickets, same version, same day) brought the overall rate from 23% to 11%. *Lesson: check what the label really means before training anything.*
@@ -190,6 +207,12 @@ In the first red-team run, the agent correctly ignored the injected instruction 
 
 **10 · Thinking models need room to think.**
 An evaluation run crashed because the small model's built-in reasoning used up its whole 300-token allowance before writing an answer. *Lesson: on current models, thinking counts toward the output limit, so set limits for the whole response, not just the visible answer.*
+
+**12 · Real users don't ask clean questions.**
+I tested 30 questions written the way people actually type: *"what fine max if we break gdpr"*, Swedish questions, and situations like *"our AWS went down for 6 hours, do we need to tell anyone?"*. The fix was an **understanding step** that restates the question, which the user sees and can correct before the answer. Wrong refusals dropped to zero. But more willing answers scored worse on faithfulness. *Lesson: every improvement moves a trade-off; measure both sides.*
+
+**13 · Look inside your model.**
+Printing the slip model's strongest signals showed it had learned project jargon ("tez", "metastore") rather than delivery behaviour, and that "owner has many open tickets" *lowered* risk in open-source projects. *Lesson: good test scores can hide the wrong reasons. Inspect what the model learned before trusting it in a new setting.*
 
 **11 · Constraints force trade-offs you can explain.**
 Neural embedding libraries didn't support Python 3.14 yet, so the meaning-based search uses LSA, a classic technique. Measured against keyword-only search, the hybrid still won (56% vs 48% right article first). *Lesson: when the ideal tool isn't available, measure whether the alternative is good enough. Don't assume.*
