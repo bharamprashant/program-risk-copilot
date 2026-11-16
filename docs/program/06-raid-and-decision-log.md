@@ -29,7 +29,8 @@
 | I1 | EUR-Lex blocks automated download of regulation texts | Use the EU Publications Office content API | Engineering | ✅ Closed |
 | I2 | Neural embedding libraries don't support the Python version in use | Use LSA embeddings; measure against keyword search (hybrid wins) | Engineering | ✅ Closed |
 | I3 | Confluence not active on the Atlassian site | Program documents kept in git (`docs/program/`), linked from Jira | TPM | ✅ Workaround |
-| I4 | API credit ran out during evaluation | Credit added; spend limit to be set in the vendor console | TPM | ✅ Closed |
+| I4 | API credit ran out during evaluation | Credit added; vendor spend limit set to $20/month | TPM | ✅ Closed |
+| I5 | Hugging Face requires a paid plan for interactive demos | Moved hosting to Render's free plan (DEC-10) | TPM | ✅ Closed |
 
 ## Dependencies
 | ID | Dependency | Needed by | Status |
@@ -50,3 +51,4 @@
 | DEC-07 | 2026-11-16 | Allow partial answers with "what's missing", instead of refusing | Over-refusal blocked useful answers | All-or-nothing answering |
 | DEC-08 | 2026-11-16 | Program documents in git, linked from Jira | Confluence unavailable; version control and review | Wait for Confluence |
 | DEC-09 | 2026-11-16 | Fictional client (NordPay AB) for the public version | Realistic context without any real employer's data | Using a real company's data (rejected) |
+| DEC-10 | 2026-11-16 | Host the public demo on Render's free plan in Frankfurt (EU), not Hugging Face | Hugging Face now charges for Gradio apps; Render is free, EU-hosted, and deploys from git (`render.yaml`). Trade-off accepted: about 50 s wake-up after idle | Hugging Face PRO at $9/month; static showcase without live AI |
