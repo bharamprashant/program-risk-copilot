@@ -77,8 +77,9 @@ th{{color:var(--muted);font-weight:600}} pre{{background:var(--card);border:1px 
 a{{color:var(--accent)}}</style></head><body><main>
 <h1>Program Risk &amp; Compliance Copilot</h1>
 <p class="sub">ML slip-risk prediction + RAG over DORA, GDPR and PSD2 + an LLM agent that drafts steering-committee briefings, under guardrails and human approval. Every number below is measured.</p>
+<p><a href="https://program-risk-copilot.onrender.com/"><b>▶ Try the live demo</b></a> <span class="note">(free hosting: the first load can take up to a minute)</span></p>
 {''.join(s)}
-<p class="note">Built by Prashant Bharam · <a href="https://github.com/bharamprashant/program-risk-copilot">source</a></p></main></body></html>"""
+<p class="note">Built by Prashant Bharam · <a href="https://github.com/bharamprashant/program-risk-copilot">source</a></p></main><script>/* wake the free Render demo in the background so it is ready when the visitor clicks */fetch("https://program-risk-copilot.onrender.com/",{{mode:"no-cors",cache:"no-store"}}).catch(function(){{}})</script></body></html>"""
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(page)
     print(f"wrote {OUT}")
